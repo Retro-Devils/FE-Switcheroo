@@ -10,15 +10,11 @@ curl -sSL https://bit.ly/3uHofsU | bash
 
 # Usage
 * Attract Mode *
-
 -Exit attract mode
-
 -Type " switcheroo "
 
 * EmulationStation *
-
 - Go to RetroPie/FE-Switcheroo, Press A
 
 * Pegasus FE *
-
 - Go to RetroPie/FE-Switcheroo, Press A
