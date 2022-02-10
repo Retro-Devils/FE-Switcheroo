@@ -9,12 +9,12 @@ open terminal type
 curl -sSL https://bit.ly/3uHofsU | bash
 
 # Usage
-  # Attract Mode *
+  Attract Mode *
    -Exit attract mode
    -Type " switcheroo "
 
-  # Emulation Station *
+  Emulation Station *
    -Go to RetroPie/FE-Switcheroo, Press A
 
-  # Pegasus FE *
+  Pegasus FE *
    -Go to RetroPie/FE-Switcheroo, Press A
