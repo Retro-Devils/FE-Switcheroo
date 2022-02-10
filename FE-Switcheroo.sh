@@ -9,9 +9,9 @@ function fe_menu() {
         choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FRONT END MENU " \
             --ok-label OK --cancel-label Exit \
             --menu "What Mode would you like to Switch to?" 25 75 20 \
-            1 "Switch Frontend to EmuStation" \
-            2 "Switch Frontend to Attract Mode" \
-            3 "Switch Frontend to Pegasus FE" \
+            1 "Switch Frontend To EmuStation" \
+            2 "Switch Frontend To Attract Mode" \
+            3 "Switch Frontend To Pegasus FE" \
             2>&1 > /dev/tty)
 
         case "$choice" in
