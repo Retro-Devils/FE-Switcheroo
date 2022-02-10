@@ -6,12 +6,12 @@ function fe_menu() {
     local choice
 
     while true; do
-        choice=$(dialog --backtitle "Front End Selector Currently using $fe" --title " FRONT END MENU " \
+        choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FRONT END MENU " \
             --ok-label OK --cancel-label Exit \
             --menu "What Mode would you like to Switch to?" 25 75 20 \
-            1 "Switch to EmulationStation Mode" \
-            2 "Switch to Attract Mode" \
-            3 "Switch to Pegasus Mode" \
+            1 "Switch Frontend to EmuStation" \
+            2 "Switch Frontend to Attract Mode" \
+            3 "Switch Frontend to Pegasus FE" \
             2>&1 > /dev/tty)
 
         case "$choice" in
