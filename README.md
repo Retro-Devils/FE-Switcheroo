@@ -4,7 +4,7 @@ A frontend switcher for Retropie, Pegasus and attract Mode on Pi4.
 # Install/Update 
 open terminal type
 
-curl -sSL https://bit.ly/3szXaVE | bash
+curl -sSL https://bit.ly/3JkU1jy | bash
 
 # Usage
 Attract Mode 
