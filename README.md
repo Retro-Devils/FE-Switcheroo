@@ -11,7 +11,7 @@ Version 1.00
 
 - For Attract Mode Go To Retropie-Setup/Experimental/attract mode/install 
 
-- To install open terminal type
+To install Switcheroo open terminal type
 
 curl -sSL https://bit.ly/3GH7Oz4 | bash
 
