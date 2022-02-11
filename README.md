@@ -4,13 +4,11 @@ A frontend switcher for Retropie, Pegasus and attract Mode on Pi4.
 
 Version 1.00
 
-# Install/Update 
+# Install
 
 To install open terminal type
 
 curl -sSL https://bit.ly/3uHofsU | bash
-
-Update with above command or in FE-Switcheroo Menu
 
 
 # Attract Mode Usage
