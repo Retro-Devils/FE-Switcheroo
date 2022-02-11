@@ -20,6 +20,7 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
 # Attract Mode Usage
    
 SETUP
+
 1.Press TAB go to emulators/add emulator
   
 2.Copy as Follows 
