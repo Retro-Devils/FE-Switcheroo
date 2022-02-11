@@ -17,9 +17,7 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
 
 
 
-# Attract Mode Usage
-   
-SETUP
+# Attract Mode Setup
 
 1.Press TAB go to emulators/add emulator
   
@@ -50,6 +48,13 @@ SETUP
   Everything Else default
 
 5.Should show in Attract Mode, installer made that directory and put files thier.
+
+
+# Attract Mode Usage
+
+   -Setup above FIRST.
+
+   -Go to Tools/FE-Switcheroo press A
   
 # Emulation Station Usage
   
