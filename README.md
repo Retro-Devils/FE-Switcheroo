@@ -6,9 +6,11 @@ Version 1.00
 
 # Install/Update 
 
-open terminal type
+To install open terminal type
 
 curl -sSL https://bit.ly/3uHofsU | bash
+
+Update with above command or in FE-Switcheroo Menu
 
 
 # Attract Mode Usage
