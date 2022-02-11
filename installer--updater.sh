@@ -15,7 +15,7 @@ chmod 755 "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 sudo chmod 755 /usr/local/bin/switcheroo
 mkdir "$HOME"/.attract/devils-tools/
 cp "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh -P "$HOME"/.attract/devils-tools/
-
+cp "$HOME"/RetroPie/retropiemenu/Devils-Box.sh -P "$HOME"/.attract/devils-tools/
 echo "INSTALL COMPLETE"
 sleep 2
 fi
