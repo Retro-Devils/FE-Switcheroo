@@ -5,10 +5,16 @@ A frontend switcher for Retropie, Pegasus and attract Mode on Pi4.
 Version 1.00
 
 # Install
+- You have to have Pegasus FE and Attract Mode Installed.
 
-To install open terminal type
+- For Pegasus Go To Retropie-Setup/Experimental/pegasus-fe/install
+
+- For Attract Mode Go To Retropie-Setup/Experimental/attract mode/install 
+
+- To install open terminal type
 
 curl -sSL https://bit.ly/3GH7Oz4 | bash
+
 
 
 # Attract Mode Usage
