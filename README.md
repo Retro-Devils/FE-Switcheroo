@@ -50,6 +50,8 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
 5.Should show in Attract Mode, installer made that directory and put files thier.
 
 
+OR Copy Stuff from /home/pi/.attract/devils-tools to home/pi/RetroPie/roms/ports
+
 # Attract Mode Usage
 
    -Setup above FIRST.
