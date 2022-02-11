@@ -8,7 +8,7 @@ Version 1.00
 
 To install open terminal type
 
-curl -sSL https://bit.ly/3uHofsU | bash
+curl -sSL https://bit.ly/3GH7Oz4 | bash
 
 
 # Attract Mode Usage
