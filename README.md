@@ -15,7 +15,7 @@ curl -sSL https://bit.ly/3uHofsU | bash
    
    -Exit attract mode
    
-   -Type " switcheroo "
+   -Type " switcheroo " , Press A
 
 # Emulation Station Usage
   
