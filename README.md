@@ -68,4 +68,4 @@ OR Copy Stuff from /home/pi/.attract/devils-tools to home/pi/RetroPie/roms/ports
    
 # Terminal Usage 
 
-    -Open terminal type "switcheroo"
+    -Open terminal type switcheroo
