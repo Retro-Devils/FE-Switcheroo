@@ -62,6 +62,10 @@ OR Copy Stuff from /home/pi/.attract/devils-tools to home/pi/RetroPie/roms/ports
   
    -Go to RetroPie/FE-Switcheroo, Press A
    
-# Pegasus FE 
+# Pegasus FE Usage
 
    -Go to RetroPie/FE-Switcheroo, Press A
+   
+# Terminal Usage 
+
+    -Open terminal type "switcheroo"
