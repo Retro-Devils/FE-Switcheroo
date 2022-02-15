@@ -29,7 +29,7 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
   
   Command Arguments-----"[romfilename]"
   
-  Rom Paths-------------/home/pi/.attract/devils-tools
+  Rom Paths-------------/home/pi/.attract/tools
   
   Extension-------------.sh,.SH
   
@@ -50,7 +50,7 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
 5.Should show in Attract Mode, installer made that directory and put files thier.
 
 
-OR Copy Stuff from /home/pi/.attract/devils-tools to home/pi/RetroPie/roms/ports
+OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 # Attract Mode Usage
 
