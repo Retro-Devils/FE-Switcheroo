@@ -25,18 +25,39 @@ function fe_menu() {
         choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " SWITCHEROO MENU " \
             --ok-label OK --cancel-label Exit \
             --menu "Which Frontend would you like to Switch to?" 25 75 20 \
-            1 "Switch Frontend To Emu Station" \
-            2 "Switch Frontend To Attract Mode" \
-            3 "Switch Frontend To Pegasus FE" \
+	    1 "Switch Frontend To Attract Mode" \
+            2 "Switch Frontend To Raspi Desktop" \
+            3 "Switch Frontend To Emu Station" \
+            4 "Switch Frontend To Pegasus FE" \
             2>&1 > /dev/tty)
 
         case "$choice" in
-            1) ES_FE ;;
-            2) AT_FE ;;
-            3) PE_FE ;;
-            *)  break ;;
+            1) AT_FE ;;
+            2) DE_FE ;;
+            3) ES_FE ;;
+            4) PE_FE ;;
+	    *)  break ;;
         esac
     done
+}
+function DE_FE() {
+if grep -q 'attract \#auto' "$AUTOSTART"; then
+    sudo sed -i 's/attract \#auto/startx \#auto/g' $AUTOSTART
+    echo "Desktop Mode Set"
+    sleep 2
+    pgrep -f attract|xargs sudo kill -9 > /dev/null 2>&1 &
+    sudo openvt -c 1 -s -f startx 2>&1
+elif grep -q 'pegasus-fe \#auto' "$AUTOSTART"; then
+    sudo sed -i 's/pegasus-fe \#auto/startx \#auto/g' $AUTOSTART
+    echo "Desktop Mode Set"
+    sleep 2
+    pgrep -f pegasus-fe|xargs sudo kill -9 > /dev/null 2>&1 &
+    sudo openvt -c 1 -s -f startx 2>&1
+elif grep -q 'startx \#auto' "$AUTOSTART"; then
+    echo "Desktop Mode Already Set"
+    sleep 2
+fi
+mode_check
 }
 function ES_FE() {
 if grep -q 'attract \#auto' "$AUTOSTART"; then
