@@ -57,6 +57,14 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
    -Setup above FIRST.
 
    -Go to Tools/FE-Switcheroo press A
+   
+# Desktop Usage 
+
+   - Open terminal type " switcheroo" 
+   
+   - Select frontend 
+   
+   - Reboot 
   
 # Emulation Station Usage
   
