@@ -30,10 +30,10 @@ function fe_menu() {
             2 "Switch Frontend To Desktop" \
             3 "Switch Frontend To Emu Station" \
             4 "Switch Frontend To Pegasus FE" \
-	    + "                              " \
 	    + "<--------->HELPERS<---------->" \
 	    5 "Attract Mode WORK IN PROGRESS" \
 	    6 "Pegasus Helper" \
+	    7 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -44,7 +44,7 @@ function fe_menu() {
             4) PE_FE ;;
 	    5) attract_helper ;;
    	    6) pegasus_helper ;;
-	    7) update ;;
+	    7) update-switcheroo ;;
             *)  break ;;
         esac
     done
@@ -322,6 +322,9 @@ cd "/home/pi/.emulationstation/themes/$theme"
 read -n 1 -s -r -p "Above Is Converting Results-----Press any key to Continue"
 }
 
+function update-switcheroo() {
+curl -sSL https://bit.ly/3GH7Oz4 | bash
+}
 fe_menu
   fi
 fi
