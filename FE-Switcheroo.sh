@@ -30,6 +30,7 @@ function fe_menu() {
             2 "Switch Frontend To Desktop" \
             3 "Switch Frontend To Emu Station" \
             4 "Switch Frontend To Pegasus FE" \
+	    + "                              " \
 	    + "<--------->HELPERS<---------->" \
 	    5 "Attract Mode WORK IN PROGRESS" \
 	    6 "Pegasus Helper" \
@@ -42,7 +43,8 @@ function fe_menu() {
             3) ES_FE ;;
             4) PE_FE ;;
 	    5) attract_helper ;;
-   	    5) pegasus_helper ;;
+   	    6) pegasus_helper ;;
+	    7) update ;;
             *)  break ;;
         esac
     done
@@ -169,21 +171,18 @@ local choice
       1 "Theme Installer Menu" \
       2 "Theme Converter Menu" \
       3 "Help With Pegasus" \
-      + "----------------------------" \
-      4 "Update This Helper" \
       2>&1 >/dev/tty)
 
     case "$choice" in
-    1) theme_menu ;;
-    2) convert_theme ;;
-    3) help       ;;
+    1) peg-theme_menu ;;
+    2) peg-convert_theme ;;
+    3) peg-help       ;;
     +) none ;;
-    4) update     ;;
     *) break ;;
     esac
   done
 }
-function theme_menu() {
+function peg-theme_menu() {
 local choice
 
   while true; do
@@ -242,7 +241,7 @@ Press any button to continue " 0 0
 omxplayer "$HOME"/.helpers/Pegasus-Helper-PI4-main/previews/neoretro-preview.mp4
 }
 
-function help() {
+function peg-help() {
 local choice
 
   while true; do
@@ -254,13 +253,13 @@ local choice
       2>&1 >/dev/tty)
 
     case "$choice" in
-    1) help-of  ;;
-    2) help-un  ;;
+    1) peg-help-of  ;;
+    2) peg-help-un  ;;
     *) break ;;
     esac
   done
 }
-function help-of() {
+function peg-help-of() {
 dialog  --sleep 1 --title "OFFICAL HELP " --msgbox " 
 -*A cross platform, customizable graphical frontend for launching emulators and managing your game collection.*-
 -*All your games, in one place*-
@@ -274,7 +273,7 @@ Pegasus can run on Linux, Windows, Mac, Raspberry Pi, Odroid and Android devices
 More info Visit:
 https://pegasus-frontend.org/" 0 0
 }
-function help-un() {
+function peg-help-un() {
 dialog  --sleep 1 --title "UNOFFICAL HELP " --msgbox "
 --TO RUN--
 Open Terminal & Type 
@@ -288,11 +287,8 @@ Save & reboot.
 Install Frontend Switcher to switch easy.
 A few teams have fe-switcher. We Devils Building one now." 0 0
 }
-function update() {
-curl -sSL https://bit.ly/3sx1QM5 | bash
-}
 
-function convert_theme() {
+function peg-convert_theme() {
     local choice
 
     while true; do
@@ -311,14 +307,14 @@ function convert_theme() {
     done
 }
 
-function list-themes() {
+function peg-list-themes() {
 clear
 cd "/home/pi/.emulationstation/themes/"
 ls
 read -n 1 -s -r -p "Above Is A List Of Installed Themes-----Press any key to Continue"
 }
 
-function convert() {
+function peg-convert() {
 echo "Please type theme name and press Enter"
 read theme
 cd "/home/pi/.emulationstation/themes/$theme"
