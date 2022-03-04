@@ -86,3 +86,25 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 # Terminal Usage 
 
    -Open terminal type switcheroo
+
+
+# HELPERS INFO & FEATURES
+
+*---Pegasus Helper Features--*
+
+-Theme Downloader
+
+-Display Help
+
+-Theme Converter (Work In Progress)
+
+-Preview Themes 
+
+*---Attract Mode Helper Planned Features---*
+
+-Code and add a theme installer/downloader
+
+-Recode (if need) AMThemes
+
+-Display previews of themes through Helper
+
