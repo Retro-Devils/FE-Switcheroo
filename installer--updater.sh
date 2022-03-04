@@ -10,7 +10,8 @@ sudo wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/swit
 chmod 755 "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 sudo chmod 755 /usr/local/bin/switcheroo
 cp "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh -P "$HOME"/.attract/tools/
-echo "UPDATE COMPLETE"
+echo "UPDATE COMPLETE LAUNCHING SWITCHEROO"
+"$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 sleep 2 
 else
 echo "---INSTALLING FE SWITCHEROO NOW---"
@@ -24,6 +25,7 @@ mkdir "$HOME"/.attract/tools/
 cp "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh -P "$HOME"/.attract/tools/
 cp "$HOME"/RetroPie/retropiemenu/Devils-Box.sh -P "$HOME"/.attract/tools/
 chmod 755 "$HOME"/.attract/tools/
-echo "INSTALL COMPLETE"
+echo "INSTALL COMPLETE LAUNCHING SWITCHEROO"
 sleep 2
+"$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 fi
