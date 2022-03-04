@@ -33,7 +33,7 @@ function fe_menu() {
 	    + "<--------->HELPERS<---------->" \
 	    5 "Attract Mode WORK IN PROGRESS" \
 	    6 "Pegasus Helper" \
-	    + "<---------------------------->" \
+	    + "<--------->UPDATE<----------->" \
 	    7 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
 
