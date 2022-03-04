@@ -31,7 +31,8 @@ function fe_menu() {
             3 "Switch Frontend To Emu Station" \
             4 "Switch Frontend To Pegasus FE" \
 	    + "<--------->HELPERS<---------->" \
-	    5 "Pegasus Helper" \
+	    5 "Attract Mode WORK IN PROGRESS" \
+	    6 "Pegasus Helper" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -40,7 +41,8 @@ function fe_menu() {
             2) DE_FE ;;
             3) ES_FE ;;
             4) PE_FE ;;
-	    5) pegasus_helper ;;
+	    5) attract_helper ;;
+   	    5) pegasus_helper ;;
             *)  break ;;
         esac
     done
@@ -156,14 +158,7 @@ elif grep -q 'startx \#auto' "$AUTOSTART"; then
 	fe="Desktop Mode"
 fi
 }
-   if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes ]; then
-    dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox " 
-    Taking you to Retropie Setup
-    GO TO-- MANAGE PACKAGES/EXPERIMENTAL/PEGASUS-FE
-    PRESS A TO INSTALL PEGASUS
-    Then Relaunch Pegasus Helper" 0 0
-    sudo "$HOME"/RetroPie-Setup/retropie_setup.sh;
-   else
+
 function pegasus_helper() {
 local choice
 
