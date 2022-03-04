@@ -22,9 +22,9 @@ function fe_menu() {
     local choice
 
     while true; do
-        choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FRONT END MENU " \
+        choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FE SWITCHEROO MENU " \
             --ok-label OK --cancel-label Back \
-            --menu "Which Frontend would you like to Switch to?" 25 75 20 \
+            --menu "Which Frontend or Helper Which You Like?" 25 75 20 \
 	    + "<---------->FRONTENDS<-------->" \
 	    1 "Switch Frontend To Attract Mode" \
             2 "Switch Frontend To Desktop" \
@@ -33,6 +33,7 @@ function fe_menu() {
 	    + "<--------->HELPERS<---------->" \
 	    5 "Attract Mode WORK IN PROGRESS" \
 	    6 "Pegasus Helper" \
+	    + "<---------------------------->" \
 	    7 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
 
