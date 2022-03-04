@@ -25,7 +25,7 @@ function fe_menu() {
         choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FE SWITCHEROO MENU " \
             --ok-label OK --cancel-label Back \
             --menu "Which Frontend or Helper Which You Like?" 25 75 20 \
-	    + "<---------->FRONTENDS<-------->" \
+	    + "<--------->FRONTENDS<--------->" \
 	    1 "Switch Frontend To Attract Mode" \
             2 "Switch Frontend To Desktop" \
             3 "Switch Frontend To Emu Station" \
