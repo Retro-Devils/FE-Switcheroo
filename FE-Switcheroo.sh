@@ -26,13 +26,13 @@ function fe_menu() {
             --ok-label OK --cancel-label Back \
             --menu "Which Frontend or Helper Which You Like?" 25 75 20 \
 	    + "<--------->FRONTENDS<--------->" \
-	    1 "Switch Frontend To Attract Mode" \
-            2 "Switch Frontend To Desktop" \
-            3 "Switch Frontend To Emu Station" \
-            4 "Switch Frontend To Pegasus FE" \
+	    1 "Switch FE Attract Mode" \
+            2 "Switch FE Desktop" \
+            3 "Switch FE Emu Station" \
+            4 "Switch FE Pegasus FE" \
 	    + "<--------->HELPERS<---------->" \
 	    5 "Attract Mode WORK IN PROGRESS" \
-	    6 "Pegasus Helper" \
+	    6 "Open Pegasus Helper" \
 	    + "<--------->UPDATE<----------->" \
 	    7 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
