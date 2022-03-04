@@ -1,8 +1,17 @@
 # FE-Switcheroo
 
-A frontend switcher for Retropie, Pegasus and attract Mode on Pi4.
+- A frontend switcher/helper for Retropie, Pegasus and attract Mode on Pi4.
 
-Version 1.01
+- Version 1.10
+
+
+# Features
+
+- Switch frontend to Attract Mode, Pegasu Fe, Emulation Station and Desktop 
+
+- Helpers for Pegasus and Attract Mode. (attract Mode Work In Progresss)
+     
+     - Whats a helper? A tool to install themes and make tweaks .   
 
 # Install
 - You have to have Pegasus FE and Attract Mode Installed.
