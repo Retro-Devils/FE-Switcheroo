@@ -113,7 +113,7 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 - Display previews of themes through Helper
 
-Credit:
+# Credits
 * Supreme Team  *
 
 * Chad "thepitster" Ward *
