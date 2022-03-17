@@ -1,10 +1,5 @@
 #!/bin/bash
-#
-# Description : FRONT-END SWITCHEROO TOOL
-# Author      : Supreme Team, Retro Devils
-# Credit      : Chad Ward
-# Version     : 2.0
-#
+
 clear
 
 AUTOSTART="/opt/retropie/configs/all/autostart.sh"
