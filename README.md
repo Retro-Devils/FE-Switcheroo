@@ -1,6 +1,6 @@
 # FE-Switcheroo
 
-- A frontend switcher/helper for Retropie, Pegasus, Attract Mode, and Dezktop on Pi4.
+- A frontend switcher/helper for Retropie, Pegasus, Attract Mode, and Desktop on Pi4.
 
 - Version 1.10
 
