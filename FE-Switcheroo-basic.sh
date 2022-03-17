@@ -178,7 +178,6 @@ cp /tmp/attract_tmp /home/pi/.attract/attract.cfg  2>/dev/null
 ###########
 
 function main_menu() {
-    installer_helper
     mode_check
     local choice
 
@@ -186,17 +185,14 @@ function main_menu() {
         choice=$(dialog --backtitle "RetroPie is Currently Using $md As Your Boot Mode" --title " FRONTENDS SWITCHEROO MENU V 2.0" \
             --ok-label OK --cancel-label EXIT \
             --menu "Which Frontend or Helper Which You Like To Use?" 25 75 20 \
-	    + "|=========*FRONTENDS*=========|" \
+	    + "<--------->FRONTENDS<--------->" \
 	    1 "Switch Boot Mode To Attract Mode ( $at_here )" \
             2 "Switch Boot Mode To Desktop ( $dp_here )" \
             3 "Switch Boot Mode To Emulationstation ( $es_here )" \
             4 "Switch Boot Mode To Pegasus-fe ( $ps_here )" \
             5 "Switch Boot Mode To Kodi ( $kodi_here )" \
-	    + "|=========*TOOLS*=========|" \
-	    6 "ATTRACT-MODE TOOLS COMING SOON" \
-	    7 "PEGASUS TOOLS" \
-	    + "|=========*UPDATE*=========|" \
-	    8 "Update FE Switcheroo" \
+	    + "<--------->UPDATES<----------->" \
+	    6 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
 
         case "$choice" in
@@ -206,9 +202,7 @@ function main_menu() {
             3) EMULATIONSTATION_MODE ;;
             4) PEGASUS_MODE ;;
             5) KODI_MODE ;;
-	    6) attract_helper ;;
-   	    7) pegasus_helper ;;
-	    8) start-update-switcheroo ;;
+	    6) start-update-switcheroo-basic ;;
             *)  break ;;
         esac
     done
@@ -561,303 +555,7 @@ elif grep -q 'kodi \#auto' "$AUTOSTART"; then
 fi
 }
 
-function attract_helper() {
-        echo -e "$(tput setaf 2)ATTRACT-MODE TOOLS COMING SOON. $(tput sgr0)"
-        sleep 3
-}
-
-function pegasus_helper() {
-local choice
-
-  while true; do
-    choice=$(dialog --backtitle "$BACKTITLE" --title "PEGASUS HELPER " \
-     --ok-button Select --cancel-button Exit \
-     --menu "Version 2.0" 0 0 0 \
-      1 "Theme Installer Menu" \
-      2 "Theme Converter Menu" \
-      3 "Help With Pegasus" \
-      2>&1 >/dev/tty)
-
-    case "$choice" in
-    1) peg-theme_menu ;;
-    2) peg-convert_theme ;;
-    3) peg-help       ;;
-    +) none ;;
-    *) break ;;
-    esac
-  done
-}
-
-function theme_helper() {
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/es2 ]; then
-es2_here=MISSING!
-else
-es2_here=INSTALLED!
-fi
-
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/flixnet ]; then
-flixnet_here=MISSING!
-else
-flixnet_here=INSTALLED!
-fi
-
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/neoretro-dark ]; then
-neoretro_here=MISSING!
-else
-neoretro_here=INSTALLED!
-fi
-
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/skylineOS ]; then
-skyline_here=MISSING!
-else
-skyline_here=INSTALLED!
-fi
-}
-
-function peg-theme_menu() {
-theme_helper
-local choice
-
-  while true; do
-    choice=$(dialog --backtitle "$BACKTITLE" --title "PEGASUS HELPER PI4" \
-     --ok-button Select --cancel-button Exit \
-     --menu "Theme Installer Menu" 0 0 0 \
-      1 "ES2 ( By: Nils Boneberger )( $es2_here )" \
-      2 "Flixnet ( By: Mustoha )( $flixnet_here )" \
-      3 "NeoRetro Dark ( By: Valentin MEZIN )( $neoretro_here )" \
-      4 "SkylineOS ( By: RbertoCases )( $skyline_here )" \
-      2>&1 >/dev/tty)
-
-    case "$choice" in
-    1) es2      ;;
-    2) flixnet  ;;
-    3) neo_dark ;;
-    4) skyline  ;;
-    -) none ;;
-    *) break ;;
-    esac
-  done
-}
-
-#--THEME INSTALLER--#
-function es2() {
-        if [ $NETCONNECTED  = 1 ]; then
-        dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
-        Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
-	quit
-	else
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/es2 ]; then
-   if (dialog --title "Theme Preview!" --yesno "Would You Like To Preview ES2 Theme First?" 0 0 )
-   then
-   wget -q https://pegasus-frontend.org/tools/themes/img/screenshots/github.com/mmatyas/pegasus-theme-es2-simple/Lm1ldGEvc2NyZWVuc2hvdC5wbmc=.png  -O  "$HOME"/RetroPie/retropiemenu/screenshot.png
-   fbi --noverbose --timeout 30 --once --autozoom "/home/pi/RetroPie/retropiemenu/screenshot.png" > /dev/null 2>&1
-   sudo rm "$HOME"/RetroPie/retropiemenu/screenshot.png
-   else
-   echo -e "$(tput setaf 2)skipping Preview! $(tput sgr0)"
-   sleep 3
-   fi
-   cd /opt/retropie/configs/all/pegasus-fe/themes
-   git clone -b master "https://github.com/mmatyas/pegasus-theme-es2-simple.git" es2 | cd
-   clear
-   else
-   echo -e "$(tput setaf 2)Es2 Already Installed! $(tput sgr0)"
-   sleep 3
-fi
-fi
-}
-
-function skyline() {
-        if [ $NETCONNECTED  = 1 ]; then
-        dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
-        Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
-	quit
-	else
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/skylineOS ]; then
-   if (dialog --title "Theme Preview!" --yesno "Would You Like To Preview SkylineOS Theme First?" 0 0 )
-   then
-   wget -q https://pegasus-frontend.org/tools/themes/img/screenshots/github.com/RBertoCases/skylineOS/YXNzZXRzL2ltYWdlcy9zY3JlZW5zaG90X2Jhcl9lbmQucG5n.png  -O  "$HOME"/RetroPie/retropiemenu/screenshot.png
-   fbi --noverbose --timeout 30 --once --autozoom "/home/pi/RetroPie/retropiemenu/screenshot.png" > /dev/null 2>&1
-   sudo rm "$HOME"/RetroPie/retropiemenu/screenshot.png
-   else
-   echo -e "$(tput setaf 2)skipping Preview! $(tput sgr0)"
-   sleep 3
-   fi
-   cd /opt/retropie/configs/all/pegasus-fe/themes
-   git clone -b master "https://github.com/timbiscuits/skylineOS.git" skylineOS | cd
-   clear
-   else
-   echo -e "$(tput setaf 2)skylineOS Already Installed! $(tput sgr0)"
-   sleep 3
-fi
-fi
-}
-
-function neo_dark() {
-        if [ $NETCONNECTED  = 1 ]; then
-        dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
-        Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
-	quit
-	else
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/neoretro-dark ]; then
-   if (dialog --title "Theme Preview!" --yesno "Would You Like To Preview Neoretro Dark Theme First?" 0 0 )
-   then
-   wget -q https://raw.githubusercontent.com/zhangmq/neoretro-dark/master/assets/screenshot/home_ozonedark.png  -O  "$HOME"/RetroPie/retropiemenu/screenshot.png
-   fbi --noverbose --timeout 30 --once --autozoom "/home/pi/RetroPie/retropiemenu/screenshot.png" > /dev/null 2>&1
-   sudo rm "$HOME"/RetroPie/retropiemenu/screenshot.png
-   else
-   echo -e "$(tput setaf 2)skipping Preview! $(tput sgr0)"
-   sleep 3
-   fi
-   cd /opt/retropie/configs/all/pegasus-fe/themes
-   git clone -b master "https://github.com/zhangmq/neoretro-dark.git" neoretro-dark | cd
-   clear
-   else
-   echo -e "$(tput setaf 2)Neoretro Dark Already Installed! $(tput sgr0)"
-   sleep 3
-fi
-fi
-}
-
-function flixnet() {
-        if [ $NETCONNECTED  = 1 ]; then
-        dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
-        Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
-	quit
-	else
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/themes/flixnet ]; then
-   if (dialog --title "Theme Preview!" --yesno "Would You Like To Preview Flixnet Theme First?" 0 0 )
-   then
-   wget -q https://pegasus-frontend.org/tools/themes/img/screenshots/github.com/mmatyas/pegasus-theme-flixnet/Lm1ldGEvc2NyZWVuc2hvdC5qcGc=.jpg  -O  "$HOME"/RetroPie/retropiemenu/screenshot.jpg
-   fbi --noverbose --timeout 30 --once --autozoom "/home/pi/RetroPie/retropiemenu/screenshot.jpg" > /dev/null 2>&1
-   sudo rm "$HOME"/RetroPie/retropiemenu/screenshot.jpg
-   else
-   echo -e "$(tput setaf 2)skipping Preview! $(tput sgr0)"
-   sleep 3
-   fi
-   cd /opt/retropie/configs/all/pegasus-fe/themes
-   git clone -b master "https://github.com/mmatyas/pegasus-theme-flixnet.git" flixnet | cd
-   clear
-   else
-   echo -e "$(tput setaf 2)Flixnet Already Installed! $(tput sgr0)"
-   sleep 3
-fi
-fi
-}
-#-------PREVIEWS----# WORK IN PROGRESS
-#function view_neo() {
-#dialog  --sleep 1 --title "PREVIEW THEME" --msgbox "
-#This will play an30-45 second preview video.
-#Press any button to continue " 0 0
-#omxplayer "$HOME"/.helpers//previews/neoretro-preview.mp4
-#}
-
-function peg-help() {
-local choice
-
-  while true; do
-    choice=$(dialog --backtitle "$BACKTITLE" --title "PEGASUS HELPER PI4" \
-     --ok-button Select --cancel-button Exit \
-     --menu "Help Menu" 0 0 0 \
-      1 "Offical " \
-      2 "Unoffical " \
-      2>&1 >/dev/tty)
-
-    case "$choice" in
-    1) peg-help-of  ;;
-    2) peg-help-un  ;;
-    *) break ;;
-    esac
-  done
-}
-
-function peg-help-of() {
-dialog  --sleep 1 --title "OFFICAL HELP " --msgbox " 
--*A cross platform, customizable graphical frontend for launching emulators and managing your game collection.*-
--*All your games, in one place*-
-Pegasus is a graphical frontend for browsing your game library (especially retro games) and launching them from one place. It's focusing on customizability, cross platform support (including embedded devices) and high performance.
--*A modern retro-gaming setup*-
-Instead of launching different games with different emulators one by one manually, you can add them to Pegasus and launch the games from a friendly graphical screen from your couch. You can add all kinds of artworks, metadata or video previews for each game to make it look even better!
--*Full control over the UI*-
-With additional themes, you can completely change everything that is on the screen. Add or remove UI elements, menu screens, whatever. Want to make it look like Kodi? Steam? Any other launcher? No problem. You can add animations and effects, 3D scenes, or even run your custom shader code.
--*Open source, cross platform, compatible with others*-
-Pegasus can run on Linux, Windows, Mac, Raspberry Pi, Odroid and Android devices. It's compatible with EmulationStation metadata and gamelist files, and instantly recognizes your Steam games!
-More info Visit:
-https://pegasus-frontend.org/" 0 0
-}
-
-function peg-help-un() {
-dialog  --sleep 1 --title "UNOFFICAL HELP " --msgbox "
---TO RUN--
-Open Terminal & Type 
-pegasus-fe 
---AUTOSTART AT BOOT--
-Open autostart.sh text editoy.  File located at
-/opt/retropie/configs/all/autostart.sh
-Change emulationstation to pegasus-fe
-Save & reboot.
---TO SWITCH FRONTEND EASY--
-Install Frontend Switcher to switch easy." 0 0
-}
-
-function peg-convert_theme() {
-    local choice
-
-    while true; do
-        choice=$(dialog --backtitle "$BACKTITLE" --title " PEGASUS HELPER " \
-            --ok-label Select --cancel-label Back \
-            --menu "THEME CONVERTER MENU" 0 0 0 \
-            1 "List Installed ES Themes " \
-            2 "Select Theme To Convert ( By: mmatyas )   " \
-            2>&1 > /dev/tty)
-
-        case "$choice" in
-            1) peg-list-themes ;;
-            2) peg-convert     ;;
-            *) break       ;;
-        esac
-    done
-}
-
-function peg-list-themes() {
-clear
-cd "/etc/emulationstation/themes/"
-ls
-read -n 1 -s -r -p "Above Is A List Of Installed Themes-----Press any key to Continue"
-}
-
-function peg-convert() {
-if [ ! -d /home/pi/es-pegasus-theme-converter ]; then
-    echo -e "$(tput setaf 2)ES Pegasus Theme Converter Missing Will Download Now! $(tput sgr0)"
-    sleep 3
-
-        if [ $NETCONNECTED  = 1 ]; then
-        dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
-        Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
-	quit
-	else
-        git clone -b master "https://github.com/mmatyas/es-pegasus-theme-converter.git"
-        clear
-    fi
-
-fi
-    echo "Please type theme name and press Enter"
-    read theme
-    /home/pi/es-pegasus-theme-converter/convert.py /etc/emulationstation/themes/$theme /opt/retropie/configs/all/pegasus-fe/theme/$theme
-    read -n 1 -s -r -p "Above Is Converting Results-----Press any key to Continue"
-}
-
-#Quick check
-update-switcheroo() {
-if [ -f "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh ]; then
-start-update-switcheroo
-fi
-
-if [ -f "$HOME"/RetroPie/retropiemenu/frontendselector.sh ]; then
-start-update-switcheroo
-fi
-}
-
-function start-update-switcheroo() {
+function start-update-switcheroo-basic() {
 if [ $NETCONNECTED  = 1 ]; then
         dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
         Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
@@ -885,7 +583,7 @@ sudo rm -r "$HOME"/.attract/tools/FE-Switcheroo.sh
 fi
 
 #Pulling latest script version#
-wget https://raw.githubusercontent.com/SupremePi/FE-Switcheroo/main/FE-Switcheroo.sh  -P "$HOME"/RetroPie/retropiemenu/
+wget https://raw.githubusercontent.com/SupremePi/FE-Switcheroo/main/FE-Switcheroo-basic.sh  -O "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 sudo chmod +x /home/pi/RetroPie/retropiemenu/FE-Switcheroo.sh
 
 #If on a supreme build
@@ -987,5 +685,7 @@ if [ $? -eq 0 ]; then
 else
   NETCONNECTED=1
 fi
+
+installer_helper
 
 main_menu
