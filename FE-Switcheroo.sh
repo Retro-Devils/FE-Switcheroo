@@ -193,8 +193,8 @@ function main_menu() {
             4 "Switch Boot Mode To Pegasus-fe ( $ps_here )" \
             5 "Switch Boot Mode To Kodi ( $kodi_here )" \
 	    + "|=========*TOOLS*=========|" \
-	    6 "ATTRACT-MODE TOOLS COMING SOON" \
-	    7 "PEGASUS TOOLS" \
+	    6 "ATTRACT-MODE HELPER COMING SOON" \
+	    7 "PEGASUS FE HELPER \
 	    + "|=========*UPDATE*=========|" \
 	    8 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
