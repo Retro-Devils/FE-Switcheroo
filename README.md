@@ -1,19 +1,18 @@
-FE-Switcheroo What Am I?
+# Info 
 
-A front-end switcher and tool for Retropie, Front-Ends like Pegasus Fe, Attract-Mode, Pixel Desktop, Kodi and Emaulationstaion and so much more can be found in the FE-Switcheroo script.
+This is the Devils remix of a remix of FE Switcheroo 
 
-Version 2.0
+A front-end switcher and Helper for Retropie, Front-Ends like Pegasus Fe, Attract-Mode, Pixel Desktop, Kodi and Emaulationstaion and so much more can be found in the FE-Switcheroo script.
 
-It's now supeer easy to Switch front-ends to Attract Mode, Pegasu Fe, Emulationstation,kodi and Desktop. 
-Tools for Pegasus and Attract Mode can be found under tools. (Please note that Attract-Mode is a work in progresss)
+Version 2.1
 
 # Features
 
-- Switch frontend to Attract Mode, Pegasu Fe, Emulation Station and Desktop 
+- Switch frontend to Attract Mode, Pegasus Fe, Emulation Station, Desktop and Kodi.
 
-Tools for Pegasus and Attract Mode can be found under tools. (Please note that Attract-Mode is a work in progresss)
+- Helpers for Pegasus and Attract Mode can be found under Helpers. (Please note that Attract-Mode is a work in progresss)
      
-     - Whats a helper? A tool to install themes and make tweaks .   
+- Whats a helper? A tool to install themes and make tweaks .   
 
 # Install
 - You have to have Pegasus FE and Attract Mode Installed.
@@ -25,10 +24,10 @@ Tools for Pegasus and Attract Mode can be found under tools. (Please note that A
 To install Switcheroo open terminal type
 
 Super easy one line Installer by opening terminal and typing:
-# Retro-Devils Repo
+
 curl -sSL https://bit.ly/3GH7Oz4 | bash
-# Superpi (Suprememe Team) Repo
-curl -sSL shorturl.at/izFV6 | bash
+
+
 
 
 
@@ -69,17 +68,17 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 # Attract Mode Usage
 
-   -Setup above FIRST.
+   - Setup above FIRST.
 
-   -Go to Tools/FE-Switcheroo press A
+   - Go to Tools/FE-Switcheroo press A
+   
+   - Select Options 
    
 # Desktop Usage 
 
    - Open terminal type " switcheroo" 
    
-   - Select frontend 
-   
-   - Reboot 
+   - Select Options
   
 # Emulation Station Usage
   
@@ -87,35 +86,39 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
    
 # Pegasus FE Usage
 
-   -Go to RetroPie/FE-Switcheroo, Press A
+ - Go to RetroPie/FE-Switcheroo, Press A
    
 # Terminal Usage 
 
-   -Open terminal type switcheroo
+ - Open terminal type switcheroo
 
 
 # HELPERS INFO & FEATURES
 
 *---Pegasus Helper Features--*
 
--Theme Downloader
+- Theme Downloader
 
--Display Help
+- Display Help
 
--Theme Converter (Work In Progress)
+- Theme Converter (Work In Progress)
 
--Preview Themes 
+- Preview Themes 
 
 *---Attract Mode Helper Planned Features---*
 
--Code and add a theme installer/downloader
+- Code and add a theme installer/downloader
 
--Recode (if need) AMThemes
+- Recode (if need) AMThemes
 
--Display previews of themes through Helper
+- Display previews of themes through Helper
 
 Credit:
-Supreme Team,
-Chad "thepitster" Ward,
-Retro Devils
+* Supreme  *
+* Suprememe Team Switcheroo Repo *
+curl -sSL shorturl.at/izFV6 | bash
+
+* Chad "thepitster" Ward *
+
+* Retro Devils 
 
