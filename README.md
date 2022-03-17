@@ -33,9 +33,9 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
 
 # Attract Mode Setup
 
-* 1. Press TAB go to emulators/add emulator
+**1. Press TAB go to emulators/add emulator**
   
-* 2. Copy as Follows 
+**2. Copy as Follows**
   
   Emulator Name---------Tools
 
@@ -49,9 +49,9 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
   
   Identifier------------Tools
 
-* 3. Scan Tools Emulator Directory 
+**3. Scan Tools Emulator Directory**
 
-* 4. Go To Displays Copy As Follows
+**4. Go To Displays Copy As Follows**
 
   Name-----------------Tools
   
@@ -61,7 +61,7 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
   
   Everything Else default
 
-* 5. Should show in Attract Mode, installer made that directory and put files thier.
+**5. Should show in Attract Mode, installer made that directory and put files thier.**
 
 
 OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
@@ -95,7 +95,7 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 # HELPERS INFO & FEATURES
 
-*---Pegasus Helper Features--*
+**---Pegasus Helper Features--** 
 
 - Theme Downloader
 
@@ -105,7 +105,7 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 - Preview Themes 
 
-*---Attract Mode Helper Planned Features---*
+**--Attract Mode Helper Planned Features---**
 
 - Code and add a theme installer/downloader
 
@@ -114,9 +114,9 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 - Display previews of themes through Helper
 
 # Credits
-* Supreme Team  *
+* Supreme Team  
 
-* Chad "thepitster" Ward *
+* Chad "thepitster" Ward 
 
 * Retro Devils 
 
