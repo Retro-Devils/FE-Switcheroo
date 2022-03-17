@@ -33,9 +33,9 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
 
 # Attract Mode Setup
 
-1. Press TAB go to emulators/add emulator
+* 1. Press TAB go to emulators/add emulator
   
-2. Copy as Follows 
+* 2. Copy as Follows 
   
   Emulator Name---------Tools
 
@@ -49,9 +49,9 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
   
   Identifier------------Tools
 
-3. Scan Tools Emulator Directory 
+* 3. Scan Tools Emulator Directory 
 
-4. Go To Displays Copy As Follows
+* 4. Go To Displays Copy As Follows
 
   Name-----------------Tools
   
@@ -61,7 +61,7 @@ curl -sSL https://bit.ly/3GH7Oz4 | bash
   
   Everything Else default
 
-5. Should show in Attract Mode, installer made that directory and put files thier.
+* 5. Should show in Attract Mode, installer made that directory and put files thier.
 
 
 OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
