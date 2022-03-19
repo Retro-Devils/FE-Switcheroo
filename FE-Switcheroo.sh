@@ -6,7 +6,7 @@ function fe_menu() {
     local choice
 
     while true; do
-        choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FE SWITCHEROO MENU V 1.1" \
+        choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FE SWITCHEROO MENU V 2.5" \
             --ok-label OK --cancel-label Back \
             --menu "Which Frontend or Helper Which You Like To Use?" 25 75 20 \
 	    + "<--------->FRONTENDS<--------->" \
