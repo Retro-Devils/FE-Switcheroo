@@ -2,12 +2,10 @@
 AUTOSTART="/opt/retropie/configs/all/autostart.sh"
 
 if [ ! -d /opt/retropie/configs/all/pegasus-fe/ ]; then
-dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox " 
-Taking you to Retropie Setup
-GO TO-- MANAGE PACKAGES/EXPERIMENTAL/PEGASUS-FE
-PRESS A TO INSTALL PEGASUS 
-Then Relaunch Switcheroo" 0 0
-sudo "$HOME"/RetroPie-Setup/retropie_setup.sh;
+dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox "
+INSTALLING NOW" 0 0
+cd "$HOME"/RetroPie-Setup
+sudo ./retropie_packages.sh pegasus-fe;
 else
    if [ ! -d /opt/retropie/configs/all/attractmode ]; then
     dialog  --sleep 1 --title "ATTRACT MODE NOT INSTALLED !! " --msgbox " 
@@ -51,6 +49,15 @@ function fe_menu() {
     done
 }
 function AT_FE() {
+if [ ! -d /opt/retropie/configs/all/attractmode ]; then
+dialog  --sleep 1 --title "ATTRACT MODE NOT INSTALLED !! " --msgbox " 
+Taking you to Retropie Setup
+GO TO-- MANAGE PACKAGES/EXPERIMENTAL/ATTRACT MODE
+PRESS A TO INSTALL ATTRACT MODE 
+Then Relaunch Switcheroo" 0 0
+sudo "$HOME"/RetroPie-Setup/retropie_setup.sh attractmode
+AT_FE;
+else
 if grep -q 'emulationstation \#auto' "$AUTOSTART"; then
     sudo sed -i 's/emulationstation \#auto/attract \#auto/g' $AUTOSTART
     echo "Attract Mode Set"
@@ -76,6 +83,8 @@ fi
 mode_check
 }
 function DE_FE() {
+cd $HOME/RetroPie-Setup
+sudo ./retropie_packages.sh raspbiantools lxde
 if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/startx \#auto/g' $AUTOSTART
     echo "Desktop Mode Set"
@@ -126,6 +135,13 @@ fi
 mode_check
 }
 function PE_FE() {
+if [ ! -d /opt/retropie/configs/all/pegasus-fe/ ]; then
+dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox "
+INSTALLING NOW" 0 0
+cd "$HOME"/RetroPie-Setup
+sudo ./retropie_packages.sh pegasus-fe
+PE_FE;
+else
 if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/pegasus-fe \#auto/g' $AUTOSTART
     echo "Pegasus Mode Set"
