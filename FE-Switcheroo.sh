@@ -1,20 +1,6 @@
 #!/bin/bash
 AUTOSTART="/opt/retropie/configs/all/autostart.sh"
 
-if [ ! -d /opt/retropie/configs/all/pegasus-fe/ ]; then
-dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox "
-INSTALLING NOW" 0 0
-cd "$HOME"/RetroPie-Setup
-sudo ./retropie_packages.sh pegasus-fe;
-else
-   if [ ! -d /opt/retropie/configs/all/attractmode ]; then
-    dialog  --sleep 1 --title "ATTRACT MODE NOT INSTALLED !! " --msgbox " 
-    Taking you to Retropie Setup
-    GO TO-- MANAGE PACKAGES/EXPERIMENTAL/ATTRACT MODE
-    PRESS A TO INSTALL ATTRACT MODE 
-    Then Relaunch Switcheroo" 0 0
-    sudo "$HOME"/RetroPie-Setup/retropie_setup.sh;
-   else
 function fe_menu() {
     mode_check
     local choice
