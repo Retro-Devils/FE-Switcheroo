@@ -1,8 +1,9 @@
 # Info 
 
-This is the Devils remix of a remix of FE Switcheroo 
+This is the Devils FE-Switcheroo. 
 
 A front-end switcher and Helper for Retropie, Front-Ends like Pegasus Fe, Attract-Mode, Pixel Desktop & Emulationstaion.
+
 Plus so much more can be found in the FE-Switcheroo script.
 
 Version 2.5
@@ -114,10 +115,4 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 - Display previews of themes through Helper
 
-# Credits
-* Supreme Team  
-
-* Chad "thepitster" Ward 
-
-* Retro Devils 
 
