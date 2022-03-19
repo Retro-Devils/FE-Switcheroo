@@ -1,7 +1,5 @@
 #!/bin/bash
 AUTOSTART="/opt/retropie/configs/all/autostart.sh"
-#!/bin/bash
-AUTOSTART="/opt/retropie/configs/all/autostart.sh"
 
 function fe_menu() {
     mode_check
@@ -284,7 +282,7 @@ dialog  --sleep 1 --title "UNOFFICAL HELP " --msgbox "
 Open Terminal & Type 
 pegasus-fe 
 --AUTOSTART AT BOOT--
-Open autostart.sh text editoy.  File located at
+Open autostart.sh text edit to say.  File located at
 /opt/retropie/configs/all/autostart.sh
 Change emulationstation to pegasus-fe
 Save & reboot.
