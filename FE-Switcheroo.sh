@@ -68,9 +68,6 @@ fi
 mode_check
 }
 function DE_FE() {
-cd $HOME/RetroPie-Setup
-sudo ./retropie_packages.sh raspbiantools lxde
-DE_FE;
 if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/startx \#auto/g' $AUTOSTART
     echo "Desktop Mode Set"
