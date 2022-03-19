@@ -37,11 +37,9 @@ function fe_menu() {
 function AT_FE() {
 if [ ! -d /opt/retropie/configs/all/attractmode ]; then
 dialog  --sleep 1 --title "ATTRACT MODE NOT INSTALLED !! " --msgbox " 
-Taking you to Retropie Setup
-GO TO-- MANAGE PACKAGES/EXPERIMENTAL/ATTRACT MODE
-PRESS A TO INSTALL ATTRACT MODE 
-Then Relaunch Switcheroo" 0 0
-sudo "$HOME"/RetroPie-Setup/retropie_setup.sh attractmode
+INSTALLING NOW" 0 0
+cd $HOME/RetroPie-Setup
+sudo ./retropie_packages.sh raspbiantools attract
 AT_FE;
 else
 if grep -q 'emulationstation \#auto' "$AUTOSTART"; then
@@ -71,6 +69,7 @@ mode_check
 function DE_FE() {
 cd $HOME/RetroPie-Setup
 sudo ./retropie_packages.sh raspbiantools lxde
+DE_FE;
 if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/startx \#auto/g' $AUTOSTART
     echo "Desktop Mode Set"
