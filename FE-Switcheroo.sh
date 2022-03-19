@@ -195,7 +195,7 @@ local choice
       3 "NeoRetro Dark------Valentin MEZIN" \
       4 "SkylineOS-------------RbertoCases" \
       - "----------PREVIEWS---------------" \
-      - "------WORK IN PROGRESS-----------" \
+      5 "NeoRetro Preview-----------------" \
       2>&1 >/dev/tty)
 
     case "$choice" in
@@ -204,6 +204,8 @@ local choice
     3) neo_dark ;;
     4) skyline  ;;
     -) none ;;
+    5) view_neo ;;
+    6) view_switchos ;;
     *) break ;;
     esac
   done
@@ -234,12 +236,19 @@ sudo rm -R /opt/retropie/configs/all/pegasus-fe/themes/Pegasus_flixnet.zip
 sudo chmod 755 /opt/retropie/configs/all/pegasus-fe/themes/flixnet
 }
 #-------PREVIEWS----# WORK IN PROGRESS
-#function view_neo() {
-#dialog  --sleep 1 --title "PREVIEW THEME" --msgbox "
-#This will play an30-45 second preview video.
-#Press any button to continue " 0 0
-#omxplayer "$HOME"/.helpers//previews/neoretro-preview.mp4
-#}
+function view_neo() {
+dialog  --sleep 1 --title "PREVIEW THEME" --msgbox "
+This will play a 30-45 second preview video.
+Press any button to continue " 0 0
+omxplayer "$HOME"/.helpers/previews/neoretro-preview.mp4
+}
+
+function view_switchos() {
+dialog  --sleep 1 --title "PREVIEW THEME" --msgbox "
+This will play a 30-45 second preview video.
+Press any button to continue " 0 0
+omxplayer "$HOME"/.helpers/previews/switchOS-preview.mp4
+}
 
 function peg-help() {
 local choice
