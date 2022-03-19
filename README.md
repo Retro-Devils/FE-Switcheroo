@@ -2,13 +2,14 @@
 
 This is the Devils remix of a remix of FE Switcheroo 
 
-A front-end switcher and Helper for Retropie, Front-Ends like Pegasus Fe, Attract-Mode, Pixel Desktop, Kodi and Emaulationstaion and so much more can be found in the FE-Switcheroo script.
+A front-end switcher and Helper for Retropie, Front-Ends like Pegasus Fe, Attract-Mode, Pixel Desktop & Emulationstaion.
+Plus so much more can be found in the FE-Switcheroo script.
 
-Version 2.1
+Version 2.5
 
 # Features
 
-- Switch frontend to Attract Mode, Pegasus Fe, Emulation Station, Desktop and Kodi.
+- Switch frontend to Attract Mode, Pegasus Fe, Emulation Station, & Desktop
 
 - Helpers for Pegasus and Attract Mode can be found under Helpers. (Please note that Attract-Mode is a work in progresss)
      
