@@ -12,6 +12,7 @@ wget https://github.com/Retro-Devils/FE-Switcheroo/archive/refs/heads/main.zip -
 unzip "$HOME"/main.zip
 mv "$HOME"/FE-Switcheroo-main/.helpers "$HOME"
 sudo rm -r "$HOME"/FE-Switcheroo-main
+sudo rm -r "$HOME"/main.zip
 chmod 755 "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 chmod 755 "$HOME"/.attract/tools/FE-Switcheroo.sh
 sudo chmod 755 /usr/local/bin/switcheroo
@@ -30,6 +31,7 @@ wget https://github.com/Retro-Devils/FE-Switcheroo/archive/refs/heads/main.zip -
 unzip "$HOME"/main.zip
 mv "$HOME"/FE-Switcheroo-main/.helpers "$HOME"
 sudo rm -r "$HOME"/FE-Switcheroo-main
+sudo rm -r "$HOME"/main.zip
 chmod 755 "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh
 sudo chmod 755 /usr/local/bin/switcheroo
 mkdir "$HOME"/.attract/tools/
