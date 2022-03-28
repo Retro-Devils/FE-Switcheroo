@@ -8,15 +8,16 @@ function fe_menu() {
     while true; do
         choice=$(dialog --backtitle "Front End Switcheroo Currently using $fe" --title " FE SWITCHEROO MENU V 2.5" \
             --ok-label OK --cancel-label Back \
-            --menu "Which Frontend or Helper Which You Like To Use?" 25 75 20 \
+            --menu "Please Select A Option Below" 25 75 20 \
 	    + "<--------->FRONTENDS<--------->" \
-	    1 "Switch FE Attract Mode" \
-            2 "Switch FE Desktop" \
-            3 "Switch FE Emu Station" \
-            4 "Switch FE Pegasus FE" \
+	    1 "use ATTRACT MODE as FRONTEND" \
+            2 "use PIXEL DESKTOP as FRONTEND" \
+            3 "use EMU STATION as FRONTEND" \
+            4 "use PEGASUS FE as FRONTEND" \
 	    + "<--------->HELPERS<---------->" \
 	    5 "Attract Mode WORK IN PROGRESS" \
-	    6 "Open Pegasus Helper" \
+	    6 "Emulation Station Helper" \
+	    7 "Pegasus FE Helper" \
 	    + "<--------->UPDATE<----------->" \
 	    7 "Update FE Switcheroo" \
             2>&1 > /dev/tty)
@@ -28,8 +29,9 @@ function fe_menu() {
             3) ES_FE ;;
             4) PE_FE ;;
 	    5) attract_helper ;;
-   	    6) pegasus_helper ;;
-	    7) update-switcheroo ;;
+	    6) es_helper ;;
+   	    7) pegasus_helper ;;
+	    8) update-switcheroo ;;
             *)  break ;;
         esac
     done
@@ -39,7 +41,7 @@ if [ ! -d /opt/retropie/configs/all/attractmode ]; then
 dialog  --sleep 1 --title "ATTRACT MODE NOT INSTALLED !! " --msgbox " 
 INSTALLING NOW" 0 0
 cd $HOME/RetroPie-Setup
-sudo ./retropie_packages.sh raspbiantools attract
+sudo ./retropie_packages.sh attractmode
 AT_FE;
 else
     if grep -q 'emulationstation \#auto' "$AUTOSTART"; then
@@ -68,27 +70,35 @@ fi
 mode_check
 }
 function DE_FE() {
-if grep -q 'attract \#auto' "$AUTOSTART"; then
+if [ ! -f /usr/bin/startx ]; then
+dialog  --sleep 1 --title "PIXEL DESKTOP NOT INSTALLED !! " --msgbox " 
+INSTALLING NOW" 0 0
+cd $HOME/RetroPie-Setup
+sudo ./retropie_packages.sh raspbiantools lxde
+DE_FE;
+else
+    if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/startx \#auto/g' $AUTOSTART
     echo "Desktop Mode Set"
     sleep 2
     pgrep -f attract|xargs sudo kill -9 > /dev/null 2>&1 &
     sudo openvt -c 1 -s -f startx 2>&1
-elif grep -q 'pegasus-fe \#auto' "$AUTOSTART"; then
+    elif grep -q 'pegasus-fe \#auto' "$AUTOSTART"; then
     sudo sed -i 's/pegasus-fe \#auto/startx \#auto/g' $AUTOSTART
     echo "Desktop Mode Set"
     sleep 2
     pgrep -f pegasus-fe|xargs sudo kill -9 > /dev/null 2>&1 &
     sudo openvt -c 1 -s -f startx 2>&1
-elif grep -q 'emulationstation \#auto' "$AUTOSTART"; then
+    elif grep -q 'emulationstation \#auto' "$AUTOSTART"; then
     sudo sed -i 's/emulationstation \#auto/startx \#auto/g' $AUTOSTART
     echo "Desktop Mode Set"
     sleep 2
     pgrep -f emulationstation|xargs sudo kill -9 > /dev/null 2>&1 &
     sudo openvt -c 1 -s -f startx 2>&1
-elif grep -q 'startx \#auto' "$AUTOSTART"; then
+    elif grep -q 'startx \#auto' "$AUTOSTART"; then
     echo "Desktop Mode Already Set"
     sleep 2
+fi
 fi
 mode_check
 }
@@ -162,6 +172,72 @@ elif grep -q 'startx \#auto' "$AUTOSTART"; then
 fi
 }
 
+function es_helper() {
+local choice
+
+  while true; do
+    choice=$(dialog --backtitle "$BACKTITLE" --title "ES HELPER " \
+     --ok-button Select --cancel-button Exit \
+     --menu "Version 0.9" 15 30 30 \
+      1 "Devils Themes" \
+      2 "ES Theme Menu" \
+      3 "Hurstys Themes" \
+       2>&1 >/dev/tty)
+    
+    case "$choice" in 
+    1) devils-themes ;;
+    2) es-themes  ;;
+    3) hursty-themes ;;
+    *) break ;;
+    esac
+  done
+}
+
+function es-themes () {
+sudo /home/pi/RetroPie-Setup/retropie_packages.sh retropiemenu launch /home/pi/RetroPie/retropiemenu/esthemes.rp
+}
+
+function hursty-themes () {
+if [ -f "/home/pi/RetroPie/retropiemenu/hurstythemes.sh" ]; then
+/home/pi/RetroPie/retropiemenu/hurstythemes.sh
+else
+wget https://raw.githubusercontent.com/RetroHursty69/HurstyThemes/master/install.sh
+chmod +x "install.sh"
+./install.sh
+fi
+}
+
+function devil-themes() {
+local choice 
+
+  while true; do
+    choice=$(dialog --backtitle "$BACKTITLE" --title " DEVILS THEMES MENU " \ 
+    --ok-label Select --cancel-label Main-Menu \ 
+    --menu "SELECT THEME AND PRESS A " 20 50 30 \ 
+     1 "Devil Chromey " \ 
+     2 "Neon I.B.A.D " \ 
+     2>&1 >/dev/tty) 
+     
+   case "$choice" in 
+   1) devil-chromey ;; 
+   2) neon-ibad ;; 
+   *) break ;; 
+   esac 
+ done
+ }
+ 
+ function devil-chromey() {
+ wget https://archive.org/download/devils-themes/devil-chromey.zip -P ${HOME}/
+ unzip -o "$HOME"/devil-chromey.zip -d /home/pi/.emulationstation/themes/
+ sudo rm -R "$HOME"/devil-chromey.zip
+ } 
+ 
+ function neon-ibad() {
+ wget https://archive.org/download/devils-themes/NEON-IBAD.zip -P ${HOME}/
+ unzip -o "$HOME"/NEON-IBAD.zip -d /home/pi/.emulationstation/themes/
+ sudo rm -R "$HOME"/NEON-IBAD.zip
+ }
+
 function pegasus_helper() {
 local choice
 
@@ -196,6 +272,7 @@ local choice
       4 "SkylineOS-------------RbertoCases" \
       - "----------PREVIEWS---------------" \
       5 "NeoRetro Preview-----------------" \
+      6 "SwitchOS Preview-----------------" \
       2>&1 >/dev/tty)
 
     case "$choice" in
@@ -235,20 +312,41 @@ sudo unzip -o /opt/retropie/configs/all/pegasus-fe/Pegasus_flixnet.zip -d /opt/r
 sudo rm -R /opt/retropie/configs/all/pegasus-fe/themes/Pegasus_flixnet.zip
 sudo chmod 755 /opt/retropie/configs/all/pegasus-fe/themes/flixnet
 }
-#-------PREVIEWS----# WORK IN PROGRESS
+#-------PREVIEWS----#
+#function preview_pegasus() {
+#dialog  --sleep 1 --title "PREVIEW FRONTEND" --msgbox "
+#This will play a 30-45 second preview video.
+#Press any button to continue " 0 0
+#omxplayer "$HOME"/Devils-Box/helpers/pegasusfe/previews/pegasus-fe.mp4
+#}
+#function preview_attractmode() {
+#dialog  --sleep 1 --title "PREVIEW FRONTEND" --msgbox "
+#This will play a 30-45 second preview video.
+#Press any button to continue " 0 0
+#omxplayer "$HOME"/Devils-Box/helpers/attractmode/previews/attractmode.mp4
+#}
+#-PEGASUS PREVIEWS-#
 function view_neo() {
-dialog  --sleep 1 --title "PREVIEW THEME" --msgbox "
+dialog  --sleep 1 --title "PREVIEW PEGASUS THEME" --msgbox "
 This will play a 30-45 second preview video.
 Press any button to continue " 0 0
-omxplayer "$HOME"/.helpers/previews/neoretro-preview.mp4
+omxplayer "$HOME"/Devils-Box/helpers/pegasusfe/previews/neoretro-preview.mp4
 }
 
 function view_switchos() {
-dialog  --sleep 1 --title "PREVIEW THEME" --msgbox "
+dialog  --sleep 1 --title "PREVIEW PEGASUS THEME" --msgbox "
 This will play a 30-45 second preview video.
 Press any button to continue " 0 0
-omxplayer "$HOME"/.helpers/previews/switchOS-preview.mp4
+omxplayer "$HOME"/Devils-Box/helpers/pegasusfe/previews/switchOS-preview.mp4
 }
+
+#------------ATTRACT MODE PREVIEWS--------------#
+#function view_devilspin() {
+#dialog  --sleep 1 --title "PREVIEW ATTRACTMODE THEME" --msgbox "
+#This will play a 30-45 second preview video.
+#Press any button to continue " 0 0
+#omxplayer "$HOME"/Devils-Box/helpers/attractmode/previews/devilspin.mp4
+#}
 
 function peg-help() {
 local choice
@@ -316,19 +414,35 @@ function peg-convert_theme() {
     done
 }
 
-function peg-list-themes() {
+function list-themes() {
 clear
 cd "/home/pi/.emulationstation/themes/"
 ls
 read -n 1 -s -r -p "Above Is A List Of Installed Themes-----Press any key to Continue"
 }
 
-function peg-convert() {
-echo "Please type theme name and press Enter"
-read theme
-cd "/home/pi/.emulationstation/themes/$theme"
-"$HOME"/Devils-Box/files/pegasusfe/pegasus-converter/convert.py ..
-read -n 1 -s -r -p "Above Is Converting Results-----Press any key to Continue"
+function convert() {
+if [ ! -d /home/pi/es-pegasus-theme-converter ]; then
+    echo -e "$(tput setaf 2)ES Pegasus Theme Converter Missing Will Download Now! $(tput sgr0)"
+    sleep 3
+
+        if [ $NETCONNECTED  = 1 ]; then
+        dialog  --sleep 1 --title "OFFLINE?" --msgbox " 
+        Your Offline. Please Connect To The Internet And Try Again! Now Backing Out To Main Menu!" 0 0 
+	quit
+	else
+        git clone -b master "https://github.com/mmatyas/es-pegasus-theme-converter.git"
+        clear
+	cd
+    fi
+
+fi
+    cd "/home/pi/.emulationstation/themes/"
+    echo "Please type theme name and press Enter"
+    read theme
+    /home/pi/es-pegasus-theme-converter/convert.py /etc/emulationstation/themes/$theme /opt/retropie/configs/all/pegasus-fe/theme/$theme
+    read -n 1 -s -r -p "Above Is Converting Results-----Press any key to Continue"
+    cd
 }
 
 function update-switcheroo() {
