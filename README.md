@@ -1,8 +1,8 @@
 # Info 
 
-This is the Devils FE-Switcheroo. 
+This is the Devils FE-Switcheroo. Thier are many like but this is the Devils .
 
-A front-end switcher and Helper for Retropie Front-Ends like Pegasus Fe, Attract-Mode, Pixel Desktop & Emulationstaion.
+A front-end switcher and Helper for Retropie Front-Ends like Pegasus Fe, Attract-Mode, & Emulationstaion.
 
 Plus so much more can be found in the FE-Switcheroo script.
 
