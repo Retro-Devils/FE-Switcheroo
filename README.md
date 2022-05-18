@@ -17,11 +17,6 @@ Version 2.5
 - Whats a helper? A tool to install themes and make tweaks .   
 
 # Install
-- You have to have Pegasus FE and Attract Mode Installed.
-
-- For Pegasus Go To Retropie-Setup/Experimental/pegasus-fe/install
-
-- For Attract Mode Go To Retropie-Setup/Experimental/attract mode/install 
 
 To install Switcheroo open terminal type
 
@@ -29,8 +24,7 @@ Super easy one line Installer by opening terminal and typing:
 
 curl -sSL https://bit.ly/3GH7Oz4 | bash
 
-
-
+- If you don't have Attract Mode or Pegasus Fe installed it will install for you , 
 
 
 # Attract Mode Setup
@@ -99,11 +93,11 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 **---Pegasus Helper Features--** 
 
-- Theme Downloader
+- Themes Downloader
 
-- Display Help
+- Displays Help
 
-- Theme Converter (Work In Progress)
+- Themes Converter (Work In Progress)
 
 - Preview Themes 
 
