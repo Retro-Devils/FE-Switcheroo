@@ -6,7 +6,8 @@ wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/S
 wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Switch-Too-Desktop.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
 wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Switch-Too-Emulationstation.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
 wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Switch-Too-Pegasus-FE.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
-wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Helpers.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/ 
+wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Helpers.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
+sudo wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/switcheroo -P /usr/local/bin
 echo "---FE SWITCHEROO UPDATE COMPLETE---"
 sleep 3
 else
@@ -16,7 +17,8 @@ wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/S
 wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Switch-Too-Desktop.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
 wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Switch-Too-Emulationstation.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
 wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Switch-Too-Pegasus-FE.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
-wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Helpers.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/ 
+wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/buttons/Helpers.sh -P "$HOME"/RetroPie/retropiemenu/Fe-Switcheroo/
+sudo wget https://raw.githubusercontent.com/Retro-Devils/FE-Switcheroo/main/switcheroo -P /usr/local/bin
 echo "---FE SWITCHEROO INSTALL COMPLETE---"
 sleep 3
 fi
