@@ -10,7 +10,6 @@ dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox "
 INSTALLING NOW" 0 0
 cd "$HOME"/RetroPie-Setup
 sudo ./retropie_packages.sh pegasus-fe
-PE_FE;
 else
     if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/pegasus-fe \#auto/g' $AUTOSTART
