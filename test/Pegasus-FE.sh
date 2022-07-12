@@ -1,6 +1,10 @@
 #!/bin/bash
 AUTOSTART="/opt/retropie/configs/all/autostart.sh"
 
+clear
+mode_check
+echo "Front End Switcheroo Currently Using $fe"
+sleep 3 
 if [ ! -d /opt/retropie/configs/all/pegasus-fe/ ]; then
 dialog  --sleep 1 --title "PEGASUS NOT INSTALLED !! " --msgbox "
 INSTALLING NOW" 0 0
@@ -32,6 +36,11 @@ else
 fi
 fi
 mode_check
+echo "Front End Currently set Too $fe"
+sleep 3 
+echo "Rebooting Now"
+sleep 3
+sudo reboot
 
 function mode_check() {
 if grep -q 'emulationstation \#auto' "$AUTOSTART"; then
