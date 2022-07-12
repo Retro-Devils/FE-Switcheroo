@@ -6,7 +6,7 @@ A front-end switcher and Helper for Retropie Front-Ends like Pegasus Fe, Attract
 
 Plus so much more can be found in the FE-Switcheroo script.
 
-Version 2.5
+Version 3.0
 
 # Features
 
@@ -14,7 +14,9 @@ Version 2.5
 
 - Helpers for Pegasus and Attract Mode can be found under Helpers. (Please note that Attract-Mode is a work in progresss)
      
-- Whats a helper? A tool to install themes and make tweaks .   
+- Whats a helper? A tool to install themes and make tweaks.
+
+- 3.0 brings everything into Retropie menu as "buttons".  
 
 # Install
 
@@ -22,7 +24,7 @@ To install Switcheroo open terminal type
 
 Super easy one line Installer by opening terminal and typing:
 
-curl -sSL https://bit.ly/3GH7Oz4 | bash
+3.0 NEW COMMAND COMING
 
 - If you don't have Attract Mode or Pegasus Fe installed it will install for you 
 
