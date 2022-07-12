@@ -10,7 +10,6 @@ dialog  --sleep 1 --title "PIXEL DESKTOP NOT INSTALLED !! " --msgbox "
 INSTALLING NOW" 0 0
 cd $HOME/RetroPie-Setup
 sudo ./retropie_packages.sh raspbiantools lxde
-DE_FE;
 else
     if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/startx \#auto/g' $AUTOSTART
