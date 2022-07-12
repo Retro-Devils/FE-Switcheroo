@@ -1,7 +1,9 @@
 #!/bin/bash
 AUTOSTART="/opt/retropie/configs/all/autostart.sh"
 
-
+mode_check
+echo "Front End Switcheroo Currently using $fe"
+sleep 3 
 if grep -q 'attract \#auto' "$AUTOSTART"; then
     sudo sed -i 's/attract \#auto/emulationstation \#auto/g' $AUTOSTART
     echo "EmulationStation Mode Set"
@@ -25,6 +27,11 @@ elif grep -q 'emulationstation \#auto' "$AUTOSTART"; then
     sleep 2
 fi
 mode_check
+echo "Front End Set Too $fe"
+sleep 3 
+echo "Rebooting Now"
+sleep 3 
+sudo reboot
 
 function mode_check() {
 if grep -q 'emulationstation \#auto' "$AUTOSTART"; then
