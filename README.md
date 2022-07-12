@@ -24,7 +24,7 @@ Super easy one line Installer by opening terminal and typing:
 
 curl -sSL https://bit.ly/3GH7Oz4 | bash
 
-- If you don't have Attract Mode or Pegasus Fe installed it will install for you , 
+- If you don't have Attract Mode or Pegasus Fe installed it will install for you 
 
 
 # Attract Mode Setup
@@ -66,10 +66,10 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
 
 - Setup above FIRST.
 
-- Go to Tools/FE-Switcheroo press A
+- Go to Tools/FE-Switcheroo/
    
-- Select Options 
-   
+- Select Frontend Press A
+
 # Desktop Usage 
 
 - Open terminal type " switcheroo" 
@@ -78,11 +78,15 @@ OR Copy Stuff from /home/pi/.attract/tools to home/pi/RetroPie/roms/ports
   
 # Emulation Station Usage
 
-- Go to RetroPie/FE-Switcheroo, Press A
+- Go to RetroPie/FE-Switcheroo
+
+- Select Frontend Press A
    
 # Pegasus FE Usage
 
-- Go to RetroPie/FE-Switcheroo, Press A
+- Go to RetroPie/FE-Switcheroo
+
+- Select Frontend Press A
    
 # Terminal Usage 
 
