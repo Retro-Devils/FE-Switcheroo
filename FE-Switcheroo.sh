@@ -177,6 +177,10 @@ elif grep -q 'startx \#auto' "$AUTOSTART"; then
 fi
 }
 
+#------------------------------------------------------------------------------------------#
+#-----------------HELPERS------------------------HELPERS------------------HELPERS----------#
+#------------------------------------------------------------------------------------------#
+
 function es_helper() {
 local choice
 
@@ -199,9 +203,16 @@ local choice
     esac
   done
 }
+
+
+#------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------#
 function collections() {
 bash "$HOME"/Devils-Box/helpers/emulationstation/Collections.sh
 }
+#------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------#
+
 function es-themes () {
 sudo /home/pi/RetroPie-Setup/retropie_packages.sh retropiemenu launch /home/pi/RetroPie/retropiemenu/esthemes.rp
 }
@@ -246,6 +257,9 @@ local choice
  unzip -o "$HOME"/NEON-IBAD.zip -d /home/pi/.emulationstation/themes/
  sudo rm -R "$HOME"/NEON-IBAD.zip
  }
+#------------------------------------------------------------------------------------------#
+#----PEGASUS FRONTEND----PEGASUS--FRONTEND--------PEGASUS FRONTEND----PEGASUS--FRONTEND----#
+#------------------------------------------------------------------------------------------#
 
 function pegasus_helper() {
 local choice
@@ -296,7 +310,8 @@ local choice
     esac
   done
 }
-#--THEME INSTALLER--#
+
+#--PEGASUS THEME INSTALLER--#
 function es2() {
 sudo wget https://archive.org/download/devils-themes/Pegasus-Themes/Pegasus_es2.zip -P /opt/retropie/configs/all/pegasus-fe/
 sudo unzip -o /opt/retropie/configs/all/pegasus-fe/Pegasus_es2.zip -d /opt/retropie/configs/all/pegasus-fe/themes/ &&
@@ -321,7 +336,10 @@ sudo unzip -o /opt/retropie/configs/all/pegasus-fe/Pegasus_flixnet.zip -d /opt/r
 sudo rm -R /opt/retropie/configs/all/pegasus-fe/themes/Pegasus_flixnet.zip
 sudo chmod 755 /opt/retropie/configs/all/pegasus-fe/themes/flixnet
 }
+
+#------------------------------------------------------------------------------------------#
 #-------PREVIEWS----#
+#------------------------------------------------------------------------------------------#
 #function preview_pegasus() {
 #dialog  --sleep 1 --title "PREVIEW FRONTEND" --msgbox "
 #This will play a 30-45 second preview video.
@@ -334,7 +352,10 @@ sudo chmod 755 /opt/retropie/configs/all/pegasus-fe/themes/flixnet
 #Press any button to continue " 0 0
 #omxplayer "$HOME"/Devils-Box/helpers/attractmode/previews/attractmode.mp4
 #}
+#------------------------------------------------------------------------------------------#
 #-PEGASUS PREVIEWS-#
+#------------------------------------------------------------------------------------------#
+
 function view_neo() {
 dialog  --sleep 1 --title "PREVIEW PEGASUS THEME" --msgbox "
 This will play a 30-45 second preview video.
@@ -349,14 +370,8 @@ Press any button to continue " 0 0
 omxplayer "$HOME"/Devils-Box/helpers/pegasusfe/previews/switchOS-preview.mp4
 }
 
-#------------ATTRACT MODE PREVIEWS--------------#
-#function view_devilspin() {
-#dialog  --sleep 1 --title "PREVIEW ATTRACTMODE THEME" --msgbox "
-#This will play a 30-45 second preview video.
-#Press any button to continue " 0 0
-#omxplayer "$HOME"/Devils-Box/helpers/attractmode/previews/devilspin.mp4
-#}
-
+#------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------#
 function peg-help() {
 local choice
 
@@ -404,6 +419,8 @@ Install Frontend Switcher to switch easy.
 A few teams have fe-switcher. We Devils Building one now." 0 0
 }
 
+#------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------#
 function peg-convert_theme() {
     local choice
 
@@ -453,6 +470,90 @@ fi
     read -n 1 -s -r -p "Above Is Converting Results-----Press any key to Continue"
     cd
 }
+#------------------------------------------------------------------------------------------#
+#----ATTRACT MODE ATTRACT MODE -------------------ATTRACT MODE ATTRACT MODE ---------------#
+#------------------------------------------------------------------------------------------#
+
+#------------------------------------------------------------------------------------------#
+#------------ATTRACT MODE PREVIEWS--------------#
+#------------------------------------------------------------------------------------------#
+
+#function view_devilspin() {
+#dialog  --sleep 1 --title "PREVIEW ATTRACTMODE THEME" --msgbox "
+#This will play a 30-45 second preview video.
+#Press any button to continue " 0 0
+#omxplayer "$HOME"/Devils-Box/helpers/attractmode/previews/devilspin.mp4
+#}
+
+function attract-helper() {
+local choice
+
+  while true; do
+    choice=$(dialog --backtitle "$BACKTITLE" --title "ATTRACT MODE HELPER " \
+     --ok-button Select --cancel-button Exit \
+     --menu "Version 0.9" 15 30 30 \
+      1 "Attract Mode Themes" \
+      2 "Attract Mode Tools (WORK IN PROGRESS)" \
+       2>&1 >/dev/tty)
+    
+    case "$choice" in
+    1) attract-themes ;;
+    2) attract-tools ;;
+    *) break ;;
+    esac
+  done
+}
+#------------------------------------------------------------------------------------------#
+#-----------ATTRACT THEME INSTALLER---------ATTRACT THEME INSTALLER-------------INSTALLER--#
+#------------------------------------------------------------------------------------------#
+
+
+function attract-themes() {
+local choice 
+
+  while true; do
+    choice=$(dialog --backtitle "$BACKTITLE" --title " ATTRACT MODE THEMES MENU " \ 
+    --ok-label Select --cancel-label Main-Menu \ 
+    --menu "SELECT THEME AND PRESS A " 20 50 30 \ 
+     1 "DevilsSpin " \ 
+     2>&1 >/dev/tty) 
+     
+   case "$choice" in 
+   1) devilsspin ;; 
+   *) break ;; 
+   esac 
+ done
+ }
+ 
+function devilspin() {
+wget https://archive.org/download/attractmode/devilspin.zip -P "$HOME"/.am-temp
+unzip -o "$HOME"/.am-temp/devilspin.zip -d "$HOME"/.am-temp/
+sudo rm -R "$HOME"/devilspin.zip
+mv 
+} 
+
+
+function attract-tools() {
+local choice 
+
+  while true; do
+    choice=$(dialog --backtitle "$BACKTITLE" --title " ATTRACT MODE TOOLS MENU " \ 
+    --ok-label Select --cancel-label Main-Menu \ 
+    --menu "SELECT THEME AND PRESS A " 20 50 30 \ 
+     1 "tool 1 " \ 
+     2>&1 >/dev/tty) 
+     
+   case "$choice" in 
+   1) tool-1 ;; 
+   *) break ;; 
+   esac 
+ done
+}
+
+
+#------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------#
 
 function update-switcheroo() {
 if [ -f "$HOME"/RetroPie/retropiemenu/FE-Switcheroo.sh ]; then
